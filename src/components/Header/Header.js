@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.scss';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 
 export default function Header() {
@@ -18,9 +18,24 @@ export default function Header() {
                 <div className="nav-list-container">
                     <ul className="nav-list-container">
                         <li className="list-item-links">
-                            <Link className="link-item" to="/">Home</Link>
-                            <Link className="link-item" to="/login">Sign in</Link>
-                            <Link className="link-item" to="/register">Sign up</Link>
+                            <NavLink 
+                                activeClassName="active"
+                                className="link-item" 
+                                exact to="/"
+                                >Home
+                            </NavLink>
+                            <NavLink 
+                                activeClassName="active"
+                                className="link-item" 
+                                exact to="/login"
+                                >Sign in
+                            </NavLink>
+                            <NavLink 
+                                activeClassName="active"
+                                className="link-item" 
+                                exect to="/register"
+                                >Sign up
+                            </NavLink>
                         </li>
                     </ul>
                 </div>
