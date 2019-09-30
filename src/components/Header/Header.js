@@ -19,7 +19,7 @@ export default function Header() {
                     <ul className="nav-list-container">
                         <li className="list-item-links">
                             <NavLink 
-                                activeClassName="active"
+                                activeClassName={"active"}
                                 className="link-item" 
                                 exact to="/"
                                 >Home
@@ -33,7 +33,7 @@ export default function Header() {
                             <NavLink 
                                 activeClassName="active"
                                 className="link-item" 
-                                exect to="/register"
+                                exact to="/register"
                                 >Sign up
                             </NavLink>
                         </li>
