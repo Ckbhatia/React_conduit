@@ -185,7 +185,7 @@ $font-family: 'Source Sans Pro', sans-serif;
 /* Navigation */
 
 .nav-list-container {
-  margin: 0 0.51rem;
+  margin: 0.1rem 0.51rem;
 }
 
 .nav-link-heading {
@@ -212,8 +212,32 @@ $font-family: 'Source Sans Pro', sans-serif;
   color: $black;
   text-decoration: none;
   }
-  &:active {
-    color: $black;
+}
+
+// Applies on navigation links
+.active {
+  color: $black;
+}
+
+/*---------- Main page ----------*/
+
+.hero-container {
+  margin: 1rem 0;
+  background-color: $primaryColor;
+  color: $white;
+  padding: 2rem 0 1rem 0;
+  .hero-header {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 2.6rem;
+    margin: 0.4rem 0;
+  }
+  
+  .hero-para {
+    font-family: $font-family;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: 0.6rem;
   }
 }
 
@@ -265,7 +289,133 @@ $font-family: 'Source Sans Pro', sans-serif;
   }
 }
 
+/*---------- Feed ----------*/
 
+// Article preview container
+
+.art-pre-card-info-cont {
+  display: flex;
+  justify-content: space-between;
+}
+
+// Article card
+.art-pre-card-cont {
+  border-top: 1px solid rgb(233, 231, 231);
+  padding-top: 1.3rem;
+  margin-bottom: 1.3rem;
+}
+
+// Top inner container
+.art-pre-card-user-cont {
+  display: flex;
+  flex-direction: row;
+  // Image container
+  .user-pro-img-container {
+    margin-top: .2rem;
+  }
+  // Image
+  .img-pre {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50px;
+  }
+  // User and article preview info container
+  .user-basic-info {
+    // margin: .1rem .4rem;
+    margin-left: .4rem;
+    .art-pro-link {
+      font-size: .9rem;
+      color: $primaryLightDark;
+      &:hover {
+      color: $primaryLightDark;
+      }
+    }
+    .date-text {
+      display: flex;
+      font-size: .7rem;
+      color: $lightGray;
+    }
+  }
+}
+  
+// Like article preview container
+.like-art-pre-cont {
+  height: 100%;
+  color: $primaryLightDark;
+  border: 1px solid $primaryColor;
+  padding: .01rem .4rem;
+  border-radius: 5px;
+  .like-art-icon-cont {
+    font-size: 0.9rem;
+    margin-right: .2rem;
+  }
+  &:hover {
+    color: $white;
+    background-color: $primaryColor;
+  }
+}
+
+// True on like container
+.true {
+  color: $white;
+  background-color: $primaryColor;
+}
+
+// Article preview article basic container
+.art-pre-art-basic-cont {
+  margin-top: .8rem;
+  .art-pre-link-cont {
+    margin-bottom: .8rem; 
+    &:hover {
+    text-decoration: none;
+    }
+    .art-pre-heading {
+      font-family: $font-family;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: .05rem;
+      color: $lightBlack;
+    }
+    .art-pre-para {
+      font-size: .9rem;
+      line-height: .7rem;
+      color: $lightGray;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Article preview footer
+.art-pre-footer {
+  display: flex;
+  justify-content: space-between;
+  // margin-bottom: 2rem;
+  // Artical footer link
+  .art-pre-text-link {
+    font-size: .7rem;
+    color: $lightGray;
+    text-decoration: none;
+  }
+  // List item container
+  .art-pre-list-item {
+    border: 1px solid $lightGray;
+    border-radius: 8px;
+    padding: .01rem .4rem;
+    .art-pre-list-item-link {
+      font-size: .6rem;
+      color: $lightGray;
+      text-decoration: none;
+    }
+  }
+}
+
+// Css loader in feed
+.feed-loader {
+  display: flex;
+  justify-content: center;
+}
 
 @media all and (max-width: 992px) {
 /* //  Media queries */
