@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../App.scss';
+import '../../App.scss';
 import { Link, withRouter as Router } from 'react-router-dom';
-import Header from './Header/Header';
+import Header from '../Header/Header';
 import styled from 'styled-components';
 
 class Login extends Component {
