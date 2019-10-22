@@ -10,6 +10,12 @@ class App extends React.Component {
     user: null
   };
 
+  componentDidMount() {
+    if (localStorage.authToken) {
+      this.fetchUser(JSON.parse(localStorage.authToken));
+    }
+  }
+
   /**
    * Returns routes based on condition
    * @param {string}
@@ -29,11 +35,38 @@ class App extends React.Component {
       return (
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
+          <Route
+            path="/register"
+            render={() => <Register fetchUser={this.fetchUser} />}
+          />
+          <Route
+            path="/login"
+            render={() => <Login fetchUser={this.fetchUser} />}
+          />
         </Switch>
       );
     }
+  };
+
+  /**
+   * Fetch the user by token
+   * @param {string}
+   * @return {undefined}
+   */
+  fetchUser = token => {
+    token = `Token ${token}`;
+    fetch("https://conduit.productionready.io/api/user", {
+      headers: {
+        Authorization: token
+      }
+    })
+      .then(res => res.json())
+      .then(user => {
+        token = token.split(" ")[1];
+        localStorage.setItem("authToken", JSON.stringify(token));
+        this.setState({ user });
+      })
+      .catch(err => console.error(err));
   };
 
   render() {
