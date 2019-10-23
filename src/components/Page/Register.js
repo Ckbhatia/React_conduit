@@ -5,15 +5,12 @@ import Header from "../Header/Header";
 import styled from "styled-components";
 
 class Register extends Component {
-  constructor() {
-    super();
-    this.state = {
-      username: "",
-      email: "",
-      password: "",
-      isError: false
-    };
-  }
+  state = {
+    username: "",
+    email: "",
+    password: "",
+    isError: false
+  };
 
   handleInput = evt => {
     const { name, value } = evt.target;
@@ -24,10 +21,14 @@ class Register extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    // Destructure the state object
+    const { username, email, password } = this.state;
 
     fetch("https://conduit.productionready.io/api/users", {
       method: "POST",
-      body: JSON.stringify({ user: this.state }),
+      body: JSON.stringify({
+        user: { username, email, password }
+      }),
       headers: {
         "Content-Type": "application/json"
       }
